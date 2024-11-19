@@ -12,6 +12,9 @@ const twilioApiKey = process.env.TWILIO_API_KEY;
 const twilioApiSecret = process.env.TWILIO_API_SECRET;
 const outgoingApplicationSid = process.env.OUTGOING_APP_SID;
 
+app.get('/' ,(req,res)=> {
+    res.json({msg : "Test"});
+});
 app.get('/token', (req, res) => {
     const identity = req.query.identity || 'user'; 
     if (!twilioAccountSid || !twilioApiKey || !twilioApiSecret || !outgoingApplicationSid) {
